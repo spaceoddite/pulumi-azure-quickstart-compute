@@ -1,47 +1,50 @@
 {
-    "name": "xyz",
+    "name": "azure-quickstart-compute",
     "resources": {
-        "xyz:index:StaticPage": {
+        "azure-quickstart-compute:index:virtualmachine": {
             "isComponent": true,
             "inputProperties": {
-                "indexContent": {
+                "name": {
                     "type": "string",
-                    "description": "The HTML content for index.html."
-                }
-            },
-            "requiredInputs": [
-                "indexContent"
-            ],
-            "properties": {
-                "bucket": {
-                    "$ref": "/aws/v4.0.0/schema.json#/resources/aws:s3%2Fbucket:Bucket",
-                    "description": "The bucket resource."
+                    "description": "Name of your virtual machine"
                 },
-                "websiteUrl": {
+                "adminUsername": {
                     "type": "string",
-                    "description": "The website URL."
+                    "description":"admin username"
+                },
+                "adminPassword": {
+                    "type": "string",
+                    "description":"admin password"
+                },
+                "location": {
+                    "type": "string",
+                    "description":"location"
+                },
+                "vmSize": {
+                    "type": "string",
+                    "description":"vmsize"
                 }
             },
-            "required": [
-                "bucket",
-                "websiteUrl"
-            ]
+            "requiredInputs": ["name","adminUsername","adminPassword","location","vmSize"],
+            "properties": {}
+            
         }
     },
     "language": {
         "csharp": {
             "packageReferences": {
                 "Pulumi": "3.*",
-                "Pulumi.Aws": "4.*"
+                "Pulumi.AzureNative": "1.34.*"
             }
         },
         "go": {
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/pulumi/pulumi-xyz/sdk/go/xyz"
+            "importBasePath": "github.com/pulumi/pulumi-azure-quickstart-compute/sdk/go/azure-quickstart-compute"
         },
         "nodejs": {
             "dependencies": {
-                "@pulumi/aws": "^4.0.0"
+                "@pulumi/pulumi": "^3.7.0",
+                "@pulumi/azure-native": "^1.34.0"
             },
             "devDependencies": {
                 "typescript": "^3.7.0"
@@ -50,7 +53,7 @@
         "python": {
             "requires": {
                 "pulumi": ">=3.0.0,<4.0.0",
-                "pulumi-aws": ">=4.0.0,<5.0.0"
+                "pulumi-azure-native": ">=1.0.0,<2.0.0"
             }
         }
     }

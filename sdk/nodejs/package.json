@@ -1,17 +1,15 @@
 {
-    "name": "@pulumi/xyz",
+    "name": "@pulumi/azure-quickstart-compute",
     "version": "${VERSION}",
     "scripts": {
         "build": "tsc"
     },
     "dependencies": {
-        "@pulumi/aws": "^4.0.0"
+        "@pulumi/azure-native": "^1.34.0",
+        "@pulumi/pulumi": "^3.7.0"
     },
     "devDependencies": {
         "typescript": "^3.7.0"
-    },
-    "peerDependencies": {
-        "@pulumi/pulumi": "latest"
     },
     "pulumi": {
         "resource": true
