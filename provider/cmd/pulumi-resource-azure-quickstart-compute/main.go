@@ -17,11 +17,11 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi-xyz/pkg/provider"
-	"github.com/pulumi/pulumi-xyz/pkg/version"
+	"github.com/pulumi/pulumi-azure-quickstart-compute/pkg/provider"
+	"github.com/pulumi/pulumi-azure-quickstart-compute/pkg/version"
 )
 
-var providerName = "xyz"
+var providerName = "azure-quickstart-compute"
 
 func main() {
 	provider.Serve(providerName, version.Version, pulumiSchema)
