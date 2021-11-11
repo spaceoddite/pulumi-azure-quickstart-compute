@@ -560,14 +560,9 @@ github.com/pulumi/pulumi-azure-native/sdk v1.45.0 h1:6xhBpxlWK0Fc+jnLyb+mglEzQBA
 github.com/pulumi/pulumi-azure-native/sdk v1.45.0/go.mod h1:DkBBk9Gqum83aPZ/5Xg1zN59g8EiSYQBFGffaZ9WUfk=
 github.com/pulumi/pulumi/pkg/v3 v3.16.0 h1:7sk9S8lxxw7XOhmVpMIoakjt7cYWjPJPvw/sLVL+ZTc=
 github.com/pulumi/pulumi/pkg/v3 v3.16.0/go.mod h1:jiNNl7RjXQSqkfVA2EJrfwoDVWhuDPVFjOqJ8q+CquA=
-github.com/pulumi/pulumi/pkg/v3 v3.17.1 h1:YwfX5m2Ol+UqB6IxlIaPBaKqZHIpDiGFPZJ7NH7hB0s=
-github.com/pulumi/pulumi/pkg/v3 v3.17.1/go.mod h1:5eC/6zn0WF4bnPzEStcq2d2OFYvZtjjjOduRDcRL7eI=
 github.com/pulumi/pulumi/sdk/v3 v3.14.0/go.mod h1:aT7YmFdR6/T7tp2tMIZ68WRD1Xyv5a6Y4BhsuaCNpW0=
 github.com/pulumi/pulumi/sdk/v3 v3.16.0 h1:yqGysCf1LqlkengBnYqcbl5JI6JGySPN67+g60dMieU=
 github.com/pulumi/pulumi/sdk/v3 v3.16.0/go.mod h1:252ou/zAU1g6E8iTwe2Y9ht7pb5BDl2fJlOuAgZCHiA=
-github.com/pulumi/pulumi/sdk/v3 v3.17.1 h1:iMXQIiJvRZae1hFr0aC7q9uaUFnk5Evd/zYGr4hwSUQ=
-github.com/pulumi/pulumi/sdk/v3 v3.17.1/go.mod h1:AnbQmAhp0ezO/MhcVjqkhvoQnxZ0+79Xb035NcuKrtM=
-github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rjeczalik/notify v0.9.2 h1:MiTWrPj55mNDHEiIX5YUSKefw/+lCQVoAFmD6oQm5w8=
 github.com/rjeczalik/notify v0.9.2/go.mod h1:aErll2f0sUX9PXZnVNyeiObbmTlk5jnMoCa4QEjJeqM=
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=
