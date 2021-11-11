@@ -1,8 +1,11 @@
-import * as xyz from "@pulumi/azure-quickstart-compute";
+import * as vm from "@pulumi/azure-quickstart-compute";
 
-const page = new xyz.StaticPage("page", {
-    indexContent: "<html><body><p>Hello world!</p></body></html>",
+const vmach = new vm.Virtualmachine("page", {
+    name : "vm1",
+    adminUsername : "admin123",
+    adminPassword : "unify!23$",
+    location : "westus",
+    vmSize : "Standard_D2s_v3"
 });
 
-export const bucket = page.bucket;
-export const url = page.websiteUrl;
+
