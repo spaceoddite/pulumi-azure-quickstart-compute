@@ -117,6 +117,7 @@ func Newvirtualmachine(ctx *pulumi.Context,
 	networkInterfaceResource, err := network.NewNetworkInterface(ctx, "networkInterfaceResource", &network.NetworkInterfaceArgs{
 		IpConfigurations: network.NetworkInterfaceIPConfigurationArray{
 			&network.NetworkInterfaceIPConfigurationArgs{
+				Name:                      pulumi.String("ipconfig1"),
 				PrivateIPAllocationMethod: pulumi.String("Dynamic"),
 				PublicIPAddress: &network.PublicIPAddressTypeArgs{
 					Id: publicIPAddressResource.ID(),
