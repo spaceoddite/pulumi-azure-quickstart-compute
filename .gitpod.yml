@@ -1,3 +1,8 @@
+image:
+  file: .gitpod/Dockerfile
+
+
 tasks:
-  - before: curl -fsSL https://get.pulumi.com | sh
-    init: export PATH=$PATH:/home/gitpod/.pulumi/bin 
+  - before: echo "before"
+    init: echo "init"
+    command: echo "command" 
