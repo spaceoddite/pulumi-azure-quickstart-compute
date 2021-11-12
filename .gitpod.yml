@@ -1,3 +1,2 @@
 tasks:
-  - before: curl -fsSL https://get.pulumi.com | sh
-    init: make
+  - init: curl -fsSL https://get.pulumi.com | sh
