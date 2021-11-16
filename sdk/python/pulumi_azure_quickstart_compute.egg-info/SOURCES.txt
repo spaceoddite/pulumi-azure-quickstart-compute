@@ -1,0 +1,13 @@
+README.md
+setup.py
+pulumi_azure_quickstart_compute/__init__.py
+pulumi_azure_quickstart_compute/_utilities.py
+pulumi_azure_quickstart_compute/provider.py
+pulumi_azure_quickstart_compute/py.typed
+pulumi_azure_quickstart_compute/virtualmachine.py
+pulumi_azure_quickstart_compute.egg-info/PKG-INFO
+pulumi_azure_quickstart_compute.egg-info/SOURCES.txt
+pulumi_azure_quickstart_compute.egg-info/dependency_links.txt
+pulumi_azure_quickstart_compute.egg-info/not-zip-safe
+pulumi_azure_quickstart_compute.egg-info/requires.txt
+pulumi_azure_quickstart_compute.egg-info/top_level.txt
