@@ -7,9 +7,9 @@
 An example of using the `Virtual Machine` component in TypeScript is in `examples/simple`.
 
 Note that the generated provider plugin (`pulumi-resource-azure-quickstart-compute`) must be on your `PATH` to be used by Pulumi deployments. 
-
+```
 $ export PATH=$PATH:$PWD/bin
-
+```
 If creating a provider for distribution to other users, you should ensure they install this plugin to their `PATH`.
 
 ## Prerequisites
