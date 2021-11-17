@@ -39,6 +39,7 @@ $ pulumi stack init test
 $ pulumi config set aws:region us-east-1
 $ pulumi up
 
+```
 
 # Test Python SDK
 
