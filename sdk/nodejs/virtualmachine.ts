@@ -37,9 +37,6 @@ export class Virtualmachine extends pulumi.ComponentResource {
             if ((!args || args.adminUsername === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'adminUsername'");
             }
-            if ((!args || args.imageType === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'imageType'");
-            }
             if ((!args || args.location === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'location'");
             }
@@ -51,7 +48,6 @@ export class Virtualmachine extends pulumi.ComponentResource {
             }
             inputs["adminPassword"] = args ? args.adminPassword : undefined;
             inputs["adminUsername"] = args ? args.adminUsername : undefined;
-            inputs["imageType"] = args ? args.imageType : undefined;
             inputs["location"] = args ? args.location : undefined;
             inputs["name"] = args ? args.name : undefined;
             inputs["vmSize"] = args ? args.vmSize : undefined;
@@ -76,10 +72,6 @@ export interface VirtualmachineArgs {
      * admin username
      */
     adminUsername: pulumi.Input<string>;
-    /**
-     * ubuntu or windows
-     */
-    imageType: pulumi.Input<string>;
     /**
      * location
      */

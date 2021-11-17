@@ -13,9 +13,9 @@ type virtualmachineArgs struct {
 	Name          pulumi.StringInput `pulumi:"name"`
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
-	ImageType     pulumi.StringInput `pulumi:"imageType"`
-	Location      pulumi.StringInput `pulumi:"location"`
-	VmSize        pulumi.StringInput `pulumi:"vmSize"`
+	//	ImageType pulumi.StringInput `pulumi:"imageType"`
+	Location pulumi.StringInput `pulumi:"location"`
+	VmSize   pulumi.StringInput `pulumi:"vmSize"`
 }
 
 type virtualmachine struct {
@@ -38,7 +38,7 @@ func Newvirtualmachine(ctx *pulumi.Context,
 	VmNameParam := args.Name
 	AdminUsernameParam := args.AdminUsername
 	AdminPasswordParam := args.AdminPassword
-	ImageTypeParam := args.ImageType
+	//	ImageTypeParam := args.ImageType
 	LocationParam := args.Location
 	VmSizeParam := args.VmSize
 
@@ -137,26 +137,6 @@ func Newvirtualmachine(ctx *pulumi.Context,
 		return nil, err
 	}
 
-	// ubuntu or windows args settings
-	windows_ImageRefrenceArgs := &compute.ImageReferenceArgs{
-		Offer:     pulumi.String("WindowsServer"),
-		Publisher: pulumi.String("MicrosoftWindowsServer"),
-		Sku:       pulumi.String("2016-Datacenter"),
-		Version:   pulumi.String("latest"),
-	}
-
-	linux_ImageRefrenceArgs := &compute.ImageReferenceArgs{
-		Offer:     pulumi.String("UbuntuServer"),
-		Publisher: pulumi.String("Canonical"),
-		Sku:       pulumi.String("18.04-LTS"),
-		Version:   pulumi.String("latest"),
-	}
-
-	vm_ImageRefrenceArgs := linux_ImageRefrenceArgs
-
-	if ImageTypeParam == pulumi.String("windows") {
-		vm_ImageRefrenceArgs = windows_ImageRefrenceArgs
-	}
 	_, err = compute.NewVirtualMachine(ctx, "virtualMachine", &compute.VirtualMachineArgs{
 		HardwareProfile: &compute.HardwareProfileArgs{
 			VmSize: VmSizeParam,
@@ -177,16 +157,18 @@ func Newvirtualmachine(ctx *pulumi.Context,
 			ComputerName:  VmNameParam,
 		},
 		StorageProfile: &compute.StorageProfileArgs{
-			ImageReference: vm_ImageRefrenceArgs,
+			ImageReference: &compute.ImageReferenceArgs{
+				Offer:     pulumi.String("UbuntuServer"),
+				Publisher: pulumi.String("Canonical"),
+				Sku:       pulumi.String("18.04-LTS"),
+				Version:   pulumi.String("latest"),
+			},
 			OsDisk: &compute.OSDiskArgs{
 				CreateOption: pulumi.String("FromImage"),
-				DiskSizeGB:   pulumi.Int(150),
+				DiskSizeGB:   pulumi.Int(30),
 			},
 		},
 	}, pulumi.Parent(resourceGroupVar))
-	if err != nil {
-		return nil, err
-	}
 
 	if err := ctx.RegisterResourceOutputs(component, pulumi.Map{}); err != nil {
 		return nil, err
