@@ -38,7 +38,7 @@ $ yarn link @pulumi/xyz
 $ pulumi stack init test
 $ pulumi config set aws:region us-east-1
 $ pulumi up
-```
+
 
 # Test Python SDK
 
@@ -48,6 +48,6 @@ $ python -m pip install -e location\to\pulumi-azure-quickstart-compute\sdk\pytho
 $ pulumi stack init test
 $ pulumi up
 
-
+```
 
 
