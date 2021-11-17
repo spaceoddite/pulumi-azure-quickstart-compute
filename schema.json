@@ -23,9 +23,14 @@
                 "vmSize": {
                     "type": "string",
                     "description":"vmsize"
+                },
+                "imageType": {
+                    "type": "string",
+                    "description":"ubuntu or windows"
                 }
+            
             },
-            "requiredInputs": ["name","adminUsername","adminPassword","location","vmSize"],
+            "requiredInputs": ["name","adminUsername","adminPassword","location","vmSize","imageType"],
             "properties": {}
             
         }
