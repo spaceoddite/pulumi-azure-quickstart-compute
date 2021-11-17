@@ -15,6 +15,7 @@ class VirtualmachineArgs:
     def __init__(__self__, *,
                  admin_password: pulumi.Input[str],
                  admin_username: pulumi.Input[str],
+                 image_type: pulumi.Input[str],
                  location: pulumi.Input[str],
                  name: pulumi.Input[str],
                  vm_size: pulumi.Input[str]):
@@ -22,12 +23,14 @@ class VirtualmachineArgs:
         The set of arguments for constructing a Virtualmachine resource.
         :param pulumi.Input[str] admin_password: admin password
         :param pulumi.Input[str] admin_username: admin username
+        :param pulumi.Input[str] image_type: ubuntu or windows
         :param pulumi.Input[str] location: location
         :param pulumi.Input[str] name: Name of your virtual machine
         :param pulumi.Input[str] vm_size: vmsize
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "admin_username", admin_username)
+        pulumi.set(__self__, "image_type", image_type)
         pulumi.set(__self__, "location", location)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "vm_size", vm_size)
@@ -55,6 +58,18 @@ class VirtualmachineArgs:
     @admin_username.setter
     def admin_username(self, value: pulumi.Input[str]):
         pulumi.set(self, "admin_username", value)
+
+    @property
+    @pulumi.getter(name="imageType")
+    def image_type(self) -> pulumi.Input[str]:
+        """
+        ubuntu or windows
+        """
+        return pulumi.get(self, "image_type")
+
+    @image_type.setter
+    def image_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "image_type", value)
 
     @property
     @pulumi.getter
@@ -100,6 +115,7 @@ class Virtualmachine(pulumi.ComponentResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
+                 image_type: Optional[pulumi.Input[str]] = None,
                  location: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  vm_size: Optional[pulumi.Input[str]] = None,
@@ -110,6 +126,7 @@ class Virtualmachine(pulumi.ComponentResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] admin_password: admin password
         :param pulumi.Input[str] admin_username: admin username
+        :param pulumi.Input[str] image_type: ubuntu or windows
         :param pulumi.Input[str] location: location
         :param pulumi.Input[str] name: Name of your virtual machine
         :param pulumi.Input[str] vm_size: vmsize
@@ -139,6 +156,7 @@ class Virtualmachine(pulumi.ComponentResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  admin_password: Optional[pulumi.Input[str]] = None,
                  admin_username: Optional[pulumi.Input[str]] = None,
+                 image_type: Optional[pulumi.Input[str]] = None,
                  location: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  vm_size: Optional[pulumi.Input[str]] = None,
@@ -162,6 +180,9 @@ class Virtualmachine(pulumi.ComponentResource):
             if admin_username is None and not opts.urn:
                 raise TypeError("Missing required property 'admin_username'")
             __props__.__dict__["admin_username"] = admin_username
+            if image_type is None and not opts.urn:
+                raise TypeError("Missing required property 'image_type'")
+            __props__.__dict__["image_type"] = image_type
             if location is None and not opts.urn:
                 raise TypeError("Missing required property 'location'")
             __props__.__dict__["location"] = location
