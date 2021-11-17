@@ -28,9 +28,6 @@ func NewVirtualmachine(ctx *pulumi.Context,
 	if args.AdminUsername == nil {
 		return nil, errors.New("invalid value for required argument 'AdminUsername'")
 	}
-	if args.ImageType == nil {
-		return nil, errors.New("invalid value for required argument 'ImageType'")
-	}
 	if args.Location == nil {
 		return nil, errors.New("invalid value for required argument 'Location'")
 	}
@@ -53,8 +50,6 @@ type virtualmachineArgs struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	// admin username
 	AdminUsername string `pulumi:"adminUsername"`
-	// ubuntu or windows
-	ImageType string `pulumi:"imageType"`
 	// location
 	Location string `pulumi:"location"`
 	// Name of your virtual machine
@@ -69,8 +64,6 @@ type VirtualmachineArgs struct {
 	AdminPassword pulumi.StringInput
 	// admin username
 	AdminUsername pulumi.StringInput
-	// ubuntu or windows
-	ImageType pulumi.StringInput
 	// location
 	Location pulumi.StringInput
 	// Name of your virtual machine

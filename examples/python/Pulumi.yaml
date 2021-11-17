@@ -1,4 +1,4 @@
-name: pyexample
+name: py_example
 runtime:
   name: python
   options:
